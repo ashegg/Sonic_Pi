@@ -1,0 +1,139 @@
+use_bpm 132
+use_synth  :square
+
+intro ="C:/Users/ashley_hernandez/Desktop/Game Start Sound Effect- Arcade games.mp3"
+start ="C:/Users/ashley_hernandez/Desktop/Mario Party 1-3 Start Green Screen 4k.mp3"
+coin = "C:/Users/ashley_hernandez/Desktop/Coin insert into casino slot machine with a beep sound effect.mp3"
+lose= "C:/Users/ashley_hernandez/Desktop/Tekken 3 You lose Sound effects.mp3"
+
+define :ping do
+  play :g4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  #measure 1
+  play :c5
+  sleep 0.75
+  play :ab4
+  sleep 0.75
+  play :g4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  play :c5
+  sleep 0.25
+  play :g4
+  sleep 0.25
+  play :g4
+  sleep 0.25
+  play :f4
+  sleep 0.75
+  play :eb4
+  sleep 1
+  play :c4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  
+  play :f4
+  sleep 0.75
+  play :d4
+  sleep 0.75
+  play :ab4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :g5
+  sleep 0.5
+  play :f5
+  sleep 0.5
+  play :d5
+  sleep 0.5
+end
+
+
+define :ca do
+  play :eb5
+  sleep 0.75
+  play :d5
+  sleep 0.75
+  play :bb4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+end
+
+live_loop :fire do
+  sample coin
+  sleep 5
+  sample intro
+  sleep 1.6
+  sample start
+  sleep 5
+  
+  ping
+  
+  #measure 4
+  live_loop :ded do
+    70.times do
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_cymbal_pedalsample
+      sleep 0.5
+      sample :drum_heavy_kick
+    end
+    stop
+  end
+  
+  sample :perc_bell2
+  ca
+  
+  live_loop :malke do
+    16.times do
+      sample :elec_mid_snare, amp: 2
+      sleep 1
+      sample :bd_tek, amp: 3
+      sleep 1
+      sample :elec_ping, amp: 4
+      sleep 1
+      sample :elec_flip, amp: 5
+      sleep 1
+    end
+    stop
+  end
+  
+  
+  #measure 5
+  ping
+  sample :perc_bell2
+  ca
+  ping
+  ca
+  ping
+  ca
+  ping
+  sleep 0.5
+  
+  sample :vinyl_rewind
+  sleep 6
+  sample lose
+  sleep 5
+end 

@@ -1,0 +1,103 @@
+use_bpm 148
+
+
+define :function1_2 do |x|
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play :c5
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play x
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play x
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :ab4
+  sleep 1
+  play :bb4
+  sleep 1
+  play :f5
+  sleep 1
+  play :g5, sustain: 2
+  sleep 6
+end
+
+
+play :G4, sustain: 2
+sleep 3
+play :e4
+sleep 1
+
+play :g4
+sleep 1
+play :bb4
+sleep 2
+play :f5
+sleep 1
+
+play :g5, sustain: 2
+sleep 3
+play :c6
+sleep 0.5
+play :g5
+sleep 0.5
+
+play :g5
+sleep 2
+play :f4
+sleep 1
+play :g4
+sleep 1
+
+play :ab4, sustain: 2
+sleep 3
+play :ab4
+sleep 0.5
+play :c5
+sleep 0.5
+
+play :d5
+sleep 0.5
+play :eb5
+sleep 0.5
+play :d5
+sleep 0.5
+play :eb5
+sleep 0.5
+play :d5
+sleep 0.5
+play :bb4
+sleep 0.5
+play :bb4
+sleep 1
+
+play :ab4
+sleep 1
+play :g5
+sleep 1
+play :eb5, sustain: 2
+sleep 2
+
+play :eb5, sustain: 2
+sleep 2
+play :d5
+sleep 1
+play :bb4
+sleep 1
+
+
+function1_2 :c5
+function1_2 :ab4

@@ -1,0 +1,171 @@
+use_bpm 160
+george = [1,1,1,5,1,1,1,3, 1,1,1,1,1,5,1,1,1,5]
+i=0
+j =0
+z = 0
+p=0
+sus = [0, 0, 0, 4,0, 0, 0, 0,0, 0, 0, 0, 0, 4, 0, 0, 0, 4]
+kelly = [0.2, 0.4, 0.6, 0.8, 1]
+kemp = [:eb4, :g4,:eb5,:d5,:eb4,:g4,:eb5, :d5,:bb4,:ab4,:eb4,:f4, :ab5,:g5, :f4, :ab5, :g5, :f5,]
+
+coin = "C:/Users/ashley_hernandez/Desktop/mario_sounds/coin.wav"
+mushroom ="C:/Users/ashley_hernandez/Desktop/mario_sounds/mushroom.wav"
+pipe= "C:/Users/ashley_hernandez/Desktop/mario_sounds/pipe.wav"
+jump ="C:/Users/ashley_hernandez/Desktop/mario_sounds/jump.wav"
+oneup ="C:/Users/ashley_hernandez/Desktop/mario_sounds/oneup.wav"
+level = "C:/Users/ashley_hernandez/Desktop/Next Level Sound Effect"
+
+
+define :function1_2 do |x|
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play :c5
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play x
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :bb4
+  sleep 2
+  play x
+  sleep 1
+  
+  play :g4
+  sleep 1
+  play :ab4
+  sleep 1
+  play :bb4
+  sleep 1
+  play :f5
+  sleep 1
+  play :g5, sustain: 2
+  sleep 3
+  play :f5
+  sleep 0.5
+  play :c5, sustain: 2
+  sleep 12.5
+end
+
+sample level
+sleep 3
+use_synth :chiplead
+play :G4, sustain: 2
+sleep 3
+play :e4
+sleep 1
+play :g4
+sleep 1
+play :bb4
+sleep 2
+play :f5
+sleep 1
+
+play :g5, sustain: 2
+sleep 3
+play :c6
+sleep 0.5
+play :g5
+sleep 0.5
+
+play :g5
+sleep 2
+play :f4
+sleep 1
+play :g4
+sleep 1
+
+play :ab4, sustain: 2
+sleep 3
+play :ab4
+sleep 0.5
+play :c5
+sleep 0.5
+
+play :d5
+sleep 0.5
+play :eb5
+sleep 0.5
+play :d5
+sleep 0.5
+play :eb5
+sleep 0.5
+play :d5
+sleep 0.5
+play :bb4
+sleep 0.5
+play :bb4
+sleep 1
+
+play :ab4
+sleep 1
+play :g5
+sleep 1
+play :eb5, sustain: 2
+sleep 2
+
+play :eb5, sustain: 2
+sleep 2
+play :d5
+sleep 1
+play :bb4
+sleep 1
+
+sample coin
+sample mushroom
+sleep 5
+
+
+live_loop :kkkl do
+  18.times do
+    use_synth :blade
+    play (kemp [z]),amp: (kelly [j]), sustain: (sus [p])
+    sleep (george [i])
+    z = z + 1
+    i = i + 1
+    j = j + 1
+    p = p + 1
+    print (z)
+    print (i)
+  end
+  z = 0
+  i =0
+  j =0
+  p=0
+end
+
+function1_2 :c5
+function1_2 :ab4
+
+sleep 8
+
+live_loop :me do
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_cymbal_pedal
+  sleep 1
+  sample :drum_heavy_kick
+  sleep 5
+end
+
+2.times do
+  function1_2 :c5
+  function1_2 :ab4
+  function1_2 :c5
+  function1_2 :ab4
+end
+
+
+
+
+
+

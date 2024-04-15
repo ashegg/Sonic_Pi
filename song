@@ -1,54 +1,53 @@
-use_bpm 160
+use_bpm 132
+use_synth  :square
+l=0
+rachel= [0.1, 0.3,0.4,1]
 george = [1,1,1,5,1,1,1,3, 1,1,1,1,1,5,1,1,1,5]
 i=0
 j =0
 z = 0
-p=0
+p= 0
+u=5
 sus = [0, 0, 0, 4,0, 0, 0, 0,0, 0, 0, 0, 0, 4, 0, 0, 0, 4]
 kelly = [0.2, 0.4, 0.6, 0.8, 1]
-kemp = [:eb4, :g4,:eb5,:d5,:eb4,:g4,:eb5, :d5,:bb4,:ab4,:eb4,:f4, :ab5,:g5, :f4, :ab5, :g5, :f5,]
-
-coin = "C:/Users/ashley_hernandez/Desktop/mario_sounds/coin.wav"
-mushroom ="C:/Users/ashley_hernandez/Desktop/mario_sounds/mushroom.wav"
-pipe= "C:/Users/ashley_hernandez/Desktop/mario_sounds/pipe.wav"
-jump ="C:/Users/ashley_hernandez/Desktop/mario_sounds/jump.wav"
-oneup ="C:/Users/ashley_hernandez/Desktop/mario_sounds/oneup.wav"
-level = "C:/Users/ashley_hernandez/Desktop/Next Level Sound Effect"
-
+kemp = [:eb4, :g4,:eb5,:d5,:eb4,:g4,:eb5, :d5,:bb4,:ab4,:eb4,:f4, :ab5,:g5, :f4, :ab5, :g5, :f5]
+#samples
+coin = "C:/Users/herna/OneDrive/Desktop/Super Mario Bros. - Coin Sound Effect.mp3"#https://www.youtube.com/watch?v=qfx6yf8pux4&ab_channel=IltubodiFlegias
+lose ="C:/Users/herna/OneDrive/Desktop/Tekken 3 You lose Sound effects.mp3" #https://youtu.be/vutx4mL-CGs?si=ZSPvgIF-xWhnwocf
+start ="C:/Users/herna/OneDrive/Desktop/Mario Party 1-3 Start Green Screen 4k.mp3"#https://youtu.be/eZGoY3omyOA?si=L0Yf588jlWnH-Ji0
+coinslot="C:/Users/herna/OneDrive/Desktop/Coin insert into casino slot machine with a beep sound effect.mp3"#https://www.youtube.com/watch?v=OW7nb0ZdN-g&ab_channel=RealSoundz
+walking = "C:/Users/herna/OneDrive/Desktop/Sound Effects - Footsteps.mp3"#https://www.youtube.com/watch?v=mPgGg4MJKKc&ab_channel=Effecism
+levelup ="C:/Users/herna/OneDrive/Desktop/mafia city level up sound effect.mp3" #https://www.youtube.com/watch?v=aCgSPhK0lfg&ab_channel=chaitanyasagar
 define :banger_things do
   use_synth :chiplead
-  play :G4, sustain: 2
+  play :G4, sustain: 2, amp: 0.5
   sleep 3
-  play :e4
+  play :e4, amp: 0.5
   sleep 1
-  play :g4
+  play :g4, amp: 0.5
   sleep 1
-  play :bb4
+  play :bb4, amp: 0.5
   sleep 2
-  play :f5
+  play :f5, amp: 0.8
   sleep 1
-  
-  play :g5, sustain: 2
+  play :g5, sustain: 2, amp: 0.8
   sleep 3
-  play :c6
+  play :c6, amp: 0.8
   sleep 0.5
-  play :g5
+  play :g5, amp: 0.8
   sleep 0.5
-  
-  play :g5
+  play :g5, amp: 0.8
   sleep 2
-  play :f4
+  play :f4, amp: 0.8
   sleep 1
-  play :g4
+  play :g4, amp: 0.8
   sleep 1
-  
   play :ab4, sustain: 2
   sleep 3
   play :ab4
   sleep 0.5
   play :c5
   sleep 0.5
-  
   play :d5
   sleep 0.5
   play :eb5
@@ -63,27 +62,29 @@ define :banger_things do
   sleep 0.5
   play :bb4
   sleep 1
-  
   play :ab4
   sleep 1
   play :g5
   sleep 1
   play :eb5, sustain: 2
   sleep 2
-  
   play :eb5, sustain: 2
   sleep 2
   play :d5
   sleep 1
   play :bb4
   sleep 1
-  
-  sample coin
-  sample mushroom
+end
+define :pal do
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_heavy_kick
+  sleep 1
+  sample :drum_cymbal_pedal
+  sleep 1
+  sample :drum_heavy_kick
   sleep 5
 end
-
-
 define :function1_2 do |x|
   play :g4
   sleep 1
@@ -91,21 +92,18 @@ define :function1_2 do |x|
   sleep 2
   play :c5
   sleep 1
-  
   play :g4
   sleep 1
   play :bb4
   sleep 2
   play x
   sleep 1
-  
   play :g4
   sleep 1
   play :bb4
   sleep 2
   play x
   sleep 1
-  
   play :g4
   sleep 1
   play :ab4
@@ -121,58 +119,168 @@ define :function1_2 do |x|
   play :c5, sustain: 2
   sleep 12.5
 end
+define :ping do
+  play :g4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  play :c5
+  sleep 0.75
+  play :ab4
+  sleep 0.75
+  play :g4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :f4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  play :c5
+  sleep 0.25
+  play :g4
+  sleep 0.25
+  play :g4
+  sleep 0.25
+  play :f4
+  sleep 0.75
+  play :eb4
+  sleep 1
+  play :c4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :f4
+  sleep 0.75
+  play :d4
+  sleep 0.75
+  play :ab4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :g5
+  sleep 0.5
+  play :f5
+  sleep 0.5
+  play :d5
+  sleep 0.5
+end
+define :ca do
+  play :eb5
+  sleep 0.75
+  play :d5
+  sleep 0.75
+  play :bb4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+  play :eb4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :bb4
+  sleep 0.5
+end
 
-sample level
+#intro
+4.times do
+  sample walking, amp: (rachel [l])
+  l = l + 1
+  sleep 10
+end
+sample coinslot
+sleep 5
+sample start
+sleep 5
+ping
+live_loop :ded do
+  70.times do
+    sample :drum_cymbal_closed
+    sleep 0.5
+    sample :drum_cymbal_pedalsample
+    sleep 0.5
+    sample :drum_heavy_kick
+  end
+  stop
+end
+sample :perc_bell2
+ca
+live_loop :malke do
+  16.times do
+    sample :elec_mid_snare, amp: 2
+    sleep 1
+    sample :bd_tek, amp: 3
+    sleep 1
+    sample :elec_ping, amp: 4
+    sleep 1
+    sample :elec_flip, amp: 5
+    sleep 1
+  end
+  stop
+end
+ping
+sample :perc_bell2
+ca
+ping
+ca
+ping
+ca
+ping
+sleep 0.5
+sample :vinyl_rewind
+sleep 6
+sample lose
 sleep 3
 
+#transition SONG 2
+use_bpm 160
 banger_things
-
+sleep 2
 sample coin
-sample mushroom
-sleep 5
-
-
+sleep 3
 live_loop :kkkl do
-  18.times do
-    use_synth :blade
-    play (kemp [z]),amp: (kelly [j]), sustain: (sus [p])
-    sleep (george [i])
-    z = z + 1
-    i = i + 1
-    j = j + 1
-    p = p + 1
-    print (z)
-    print (i)
+  5.times do
+    18.times do
+      use_synth :blade
+      play (kemp [z]), amp: (kelly [j]), sustain: (sus [p])
+      sleep (george [i])
+      z = z + 1
+      i = i + 1
+      j = j + 1
+      p = p + 1
+    end
+    z = 0
+    i =0
+    j =0
+    p =0
   end
-  z = 0
-  i =0
-  j =0
-  p=0
+  stop
 end
-
-function1_2 :c5
-function1_2 :ab4
-
-sleep 8
-
-live_loop :me do
-  sample :drum_heavy_kick
-  sleep 1
-  sample :drum_heavy_kick
-  sleep 1
-  sample :drum_cymbal_pedal
-  sleep 1
-  sample :drum_heavy_kick
-  sleep 5
+live_loop :p do
+  20.times do
+    pal
+  end
+  stop
 end
-
+sleep 32
 2.times do
   function1_2 :c5
-  function1_2 :ab4
-  function1_2 :c5
+  sample lose, amp: 0.5
   function1_2 :ab4
 end
-
+5.times do
+  sample lose, amp: (kelly [u])
+  u = u-1
+  sleep 1
+end
 
 
 
